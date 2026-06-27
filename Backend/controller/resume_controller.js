@@ -73,8 +73,6 @@ console.log("Job Hash :", jobHash);
 
 const existingResume = await Resume.findOne({
 
-    user,
-
     resumeHash,
 
     jobHash
@@ -219,7 +217,6 @@ try {
 // console.log(analysis.suggestions);
     
 const resume= await Resume.create({
-    user,
     jobDescription,
     resumeName:req.file.originalname,
     resumeUrl:req.file.path,

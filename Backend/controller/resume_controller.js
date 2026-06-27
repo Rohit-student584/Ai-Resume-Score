@@ -217,6 +217,7 @@ try {
 // console.log(analysis.suggestions);
     
 const resume= await Resume.create({
+  user:userId,
     jobDescription,
     resumeName:req.file.originalname,
     resumeUrl:req.file.path,

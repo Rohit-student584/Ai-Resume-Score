@@ -1,0 +1,179 @@
+/* ===========================
+   SIDEBAR - DESKTOP
+=========================== */
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100vh;
+    background: #06056b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: left .35s ease;
+}
+
+.logo-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    background: white;
+    color: #06056b;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+.logo-section h2{
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.menu{
+    margin-top: -10px;
+    width: 100%;
+}
+
+.menu li{
+    list-style: none;
+}
+
+.menu-item{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 18px 30px;
+    color: white;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.menu-item:hover{
+    background: rgba(255,255,255,.1);
+}
+
+.menu-item.active{
+    background: #4f46e5;
+    border-left: 5px solid #FFD700;
+    font-weight: 600;
+}
+
+.menu-item svg{
+    font-size: 20px;
+}
+
+/* Buttons */
+
+.menu-btn,
+.close-btn{
+    display: none;
+}
+
+/* Overlay */
+
+.sidebar-overlay{
+    display: none;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.sidebar{
+
+    left:-270px;
+
+    width:270px;
+
+}
+
+.sidebar.show{
+
+    left:0;
+
+}
+
+.menu-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:fixed;
+
+    top:15px;
+
+    left:15px;
+
+    width:45px;
+
+    height:45px;
+
+    background:#06056b;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    z-index:1100;
+
+}
+
+.close-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+.sidebar-overlay{
+
+    display:block;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:999;
+
+}
+
+}

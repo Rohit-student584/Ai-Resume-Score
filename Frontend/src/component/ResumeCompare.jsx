@@ -28,6 +28,14 @@ const getComparison = async () => {
     }
 
     catch(error){
+        if (error.response?.status === 404) {
+
+        setComparison(null);
+
+        return;
+
+    }
+
 
          console.log("Full Error:", error);
 

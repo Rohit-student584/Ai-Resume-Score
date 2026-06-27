@@ -74,6 +74,27 @@ if(loading){
     );
 
 }
+
+if (!comparison) {
+    return (
+        <div className="compare-page">
+
+            <button
+                className="back-btn"
+                onClick={() => navigate(-1)}
+            >
+                ← Back
+            </button>
+
+            <h2>No previous resume found.</h2>
+
+            <p>
+                Upload another resume to compare with this one.
+            </p>
+
+        </div>
+    );
+}
    return (
 
 <div className="compare-page">

@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { api } from "../utils/axios"
 import { useEffect } from "react"
+import { Authcontext } from "./context/authcontext"
 
 
 export const ResumeDetails=()=>{
     const {resumeId}=useParams()
+    const{totalResume,setTotalResume}=useContext(Authcontext)
     const [resume,setResume]=useState(null)
     const[loading,setLoading]=useState(true)
     const navigate=useNavigate()
@@ -39,12 +41,15 @@ getResumeDetails()
     );
 
 }
+const handleClick = () => {
+    return alert(" No previous resume found for comparison.")
+}
 return (
 <div className="resume-details">
 
    <div className="resume-header">
 
-<button onClick={()=>navigate("/analytics")}>
+<button onClick={()=>navigate("/analytics")}> 
 
 ← Back
 
@@ -112,10 +117,8 @@ ATS Score
 <div className="compare-section">
 
 <button
-className="compare-btn"
-
-onClick={()=>navigate(`/resume/compare/${resume._id}`)}
-
+  className="compare-btn"
+  onClick={totalResume==1?handleClick:navigate(`/resume/compare/${resume._id}`)}
 >
 
 Compare With Previous Resume

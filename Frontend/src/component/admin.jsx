@@ -32,7 +32,7 @@ import { useNavigate } from "react-router-dom";
 export const Analytics=()=>{
   const [analytics, setAnalytics] = useState(null);
   const [chartData, setChartData] = useState([]);
-  const{user}=useContext(Authcontext)
+  const{user,totalResume,setTotalResume}=useContext(Authcontext)
   const [skillData, setSkillData] = useState({
     matchedSkills: [],
     missingSkills: []
@@ -48,7 +48,7 @@ const [selectedResumeId, setSelectedResumeId] = useState(null);
 
       const response = await api.get(`/resume/analytics/${user._id}`);
       console.log(response)
-console.log(response.data)
+setTotalResume(response.data.totalResume)
       setAnalytics(response.data);
 
    }

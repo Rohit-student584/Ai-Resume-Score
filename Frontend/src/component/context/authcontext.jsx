@@ -48,22 +48,22 @@ useEffect(() => {
     return () => unsubscribe();
 
 }, []);
-// console.log(user)
-// const getHistory=async () => {
-//     try {
-//         if (!user) return;
-//         const result=await api.get(`/resume/get/${user._id}`)
-//         setHistory(result.data.resumes)
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
+console.log(user)
+const getHistory=async () => {
+    try {
+        if (!user) return;
+        const result=await api.get(`/resume/get/${user._id}`)
+        setHistory(result.data.resumes)
+    } catch (error) {
+        console.log(error)
+    }
+}
 
-// useEffect(() => {
-//    if(user){
-//       getHistory();
-//    }
-// }, [user]);
+useEffect(() => {
+   if(user){
+      getHistory();
+   }
+}, [user]);
 return(
     <Authcontext.Provider value={{user,setUser,history,setHistory,loading,totalResume,setTotalResume}}>
         {children}

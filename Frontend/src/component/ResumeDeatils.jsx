@@ -7,7 +7,7 @@ import { Authcontext } from "./context/authcontext"
 
 export const ResumeDetails=()=>{
     const {resumeId}=useParams()
-    const{totalResume,setTotalResume}=useContext(Authcontext)
+    const{history}=useContext(Authcontext)
     const [resume,setResume]=useState(null)
     const[loading,setLoading]=useState(true)
     const navigate=useNavigate()
@@ -115,15 +115,15 @@ ATS Score
 
 </div>
 <div className="compare-section">
-
-<button
+{history.length>1 && <button
   className="compare-btn"
-  onClick={totalResume==1?handleClick:navigate(`/resume/compare/${resume._id}`)}
+onClick={()=>navigate(`/resume/compare/${resume._id}`)}
 >
 
 Compare With Previous Resume
 
-</button>
+</button>}
+
 
 </div>
 

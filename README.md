@@ -45,8 +45,7 @@ Deployment
 
 ## Live Demo
 
-http://YOUR-IP
+http://13.205.66.20/
 
 ## GitHub
-
-GitHub Repository Link
+https://github.com/Rohit-student584/Ai-Resume-Score
